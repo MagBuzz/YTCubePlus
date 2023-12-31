@@ -17,10 +17,10 @@ jobs:
     name: Submodule update
     runs-on: ubuntu-latest
     env:
-      PARENT_REPOSITORY: 'ISnackable/YTCubePlus'
+      PARENT_REPOSITORY: 'MagBuzz/YTCubePlus'
       CHECKOUT_BRANCH: 'main'
       PR_AGAINST_BRANCH: 'main'
-      OWNER: 'ISnackable'
+      OWNER: 'MagBuzz'
 
     steps:
       ##########################
