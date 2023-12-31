@@ -177,29 +177,7 @@ BOOL replacePreviousAndNextButton() {
 %end
 %end
 
-// Hide Channel Watermark
-%hook YTMainAppVideoPlayerOverlayView
-- (BOOL)isWatermarkEnabled {
-    if (IsEnabled(@"hideChannelWatermark_enabled")) {
-        return NO;
-    }
-    return %orig;
-}
-- (void)setFeaturedChannelWatermarkImageView:(id)imageView {
-    if (IsEnabled(@"hideChannelWatermark_enabled")) {
-        return;
-    }
-    %orig(imageView);
-}
-%end
 
-// Hide Channel Watermark (for Backwards Compatibility)
-%hook YTAnnotationsViewController // Deprecated hook
-- (void)loadFeaturedChannelWatermark {
-    if (IsEnabled(@"hideChannelWatermark_enabled")) {}
-    else { return %orig; }
-}
-%end
 
 // Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
